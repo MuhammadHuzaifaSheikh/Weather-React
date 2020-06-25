@@ -22,3 +22,11 @@ code {
     background-repeat: no-repeat;
   }
 }
+
+@media (max-width: 1200px) {
+  body{
+    background: url("assests/blur-background-1187974.jpg");
+    background-size: 320%;
+    background-repeat: no-repeat;
+  }
+}

@@ -22,16 +22,11 @@ class App extends React.Component {
       error: false
     };
 
-    this.weatherIcon = {
-      Thunderstorm: "wi-thunderstorm",
-      Drizzle: "wi-sleet",
-      Rain: "wi-storm-showers",
-      Snow: "wi-snow",
-      Atmosphere: "wi-fog",
-      Clear: "wi-day-sunny",
-      Clouds: "wi-day-fog"
-    };
+
+
   }
+
+
 
   get_WeatherIcon(icons, rangeId) {
     switch (true) {
@@ -62,7 +57,7 @@ class App extends React.Component {
   }
 
 
-  getWeather = async e => {
+  getWeather = (e) => {
     e.preventDefault();
 
 
@@ -88,7 +83,17 @@ class App extends React.Component {
 
         })
 
-        this.get_WeatherIcon(this.weatherIcon, response.weather[0].id);
+        let weatherIcon = {
+          Thunderstorm: "wi-thunderstorm",
+          Drizzle: "wi-sleet",
+          Rain: "wi-storm-showers",
+          Snow: "wi-snow",
+          Atmosphere: "wi-fog",
+          Clear: "wi-day-sunny",
+          Clouds: "wi-day-fog"
+        };
+
+        this.get_WeatherIcon(weatherIcon, response.weather[0].id);
 
       })
     }).catch((error) => {
