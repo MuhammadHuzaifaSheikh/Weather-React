@@ -4,7 +4,7 @@ import Form from "./app_component/form.component";
 import Weather from "./app_component/weather.component";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "weather-icons/css/weather-icons.css";
-
+const cities = require("cities-list");
 
 
 class App extends React.Component {
@@ -21,8 +21,6 @@ class App extends React.Component {
       description: "",
       error: false
     };
-
-
 
   }
 
@@ -59,9 +57,9 @@ class App extends React.Component {
 
   getWeather = (e) => {
     e.preventDefault();
-
-
     const city = e.target.elements.city.value;
+    // cities.filter(city => city.name.match('karachi'));
+
     let url = 'https://community-open-weather-map.p.rapidapi.com/weather?q=' + city;
     fetch(url, {
       method: 'GET',
